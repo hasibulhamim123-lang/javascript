@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Theme Change -->
+    <div class="theme-container">
+      <h2>Theme Switcher</h2>
+      <button id="theme-btn">Theme: Light</button>
+    </div>
+
+    <!-- Counter -->
+    <div class="counter-container">
+      <h2>Multi-counter</h2>
+      <button id="add-counter_btn">Add Counter</button>
+      <div class="show-counter"></div>
+    </div>
+
+    <!--Traffic light  -->
+    <div class="traffic-light-container">
+      <div class="light red"></div>
+      <div class="light yellow"></div>
+      <div class="light green"></div>
+    </div>
+    <button id="toggle-btn">Pause</button>
+
+    <!-- Color History -->
+    <div class="color-container">
+      <h1>Color History</h1>
+      <button id="color-btn" class="color-btn">New color</button>
+      <div class="color-card"></div>
+      <p id="color-code">Current Color: #2E60B9</p>
+      <div class="history-section">
+        <h3>Recent Colors:</h3>
+        <div id="history-container"></div>
+      </div>
+    </div>
+
+    <!-- Bill Split -->
+    <div class="split-container">
+      <h1 class="split-title">Bill Splitter</h1>
+
+      <div class="input-section">
+        <label class="input-label">Bill Amount</label>
+        <input
+          type="number"
+          id="bill-input"
+          class="text-input"
+          placeholder="0.00"
+        />
+      </div>
+
+      <div class="input-section">
+        <label class="input-label">Select Tip %</label>
+        <div class="tip-option">
+          <button type="button" class="tip-btn" data-tip="10">10%</button>
+          <button type="button" class="tip-btn" data-tip="15">15%</button>
+          <button type="button" class="tip-btn" data-tip="20">20%</button>
+          <input
+            type="number"
+            id="custom-tip"
+            class="text-input custom-input"
+            placeholder="Custom"
+          />
+        </div>
+      </div>
+
+      <div class="input-section">
+        <label class="input-label">Number of People</label>
+        <input
+          type="number"
+          id="people-input"
+          class="text-input"
+          placeholder="1"
+        />
+      </div>
+
+      <div class="result-section">
+        <div class="result-row">
+          <span class="result-label">Tip Amount</span>
+          <span id="tip-amount" class="result-value">$0.00</span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">Total Bill</span>
+          <span id="total-amount" class="result-value">$0.00</span>
+        </div>
+        <div class="result-row highlight-row">
+          <span class="result-label">Amount Per Person</span>
+          <span id="per-person-amount" class="result-value">$0.00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Unit Converter -->
+    <div class="unit-converter-container">
+      <h1 class="converter-title">Unit Converter</h1>
+
+      <div class="input-converter">
+        <label class="input-label">Amount</label>
+        <input
+          type="number"
+          id="unit-number-input"
+          class="text-input"
+          placeholder="Enter value"
+          value="1000"
+        />
+      </div>
+
+      <div class="converter-dropdown-row">
+        <div class="input-converter">
+          <label class="converter-input-label">From</label>
+          <select id="unit-from" class="select-dropdown">
+            <option value="m">Meters (m)</option>
+            <option value="km">Kilometers (km)</option>
+            <option value="cm">Centimeters (cm)</option>
+            <option value="ft">Feet (ft)</option>
+            <option value="in">Inches (in)</option>
+            <option value="mi">Miles (mi)</option>
+          </select>
+        </div>
+
+        <div class="input-converter">
+          <label class="converter-input-label">To</label>
+          <select id="unit-to" class="select-dropdown">
+            <option value="m">Meters (m)</option>
+            <option value="km" selected>Kilometers (km)</option>
+            <option value="cm">Centimeters (cm)</option>
+            <option value="ft">Feet (ft)</option>
+            <option value="in">Inches (in)</option>
+            <option value="mi">Miles (mi)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="converter-result-section">
+        <span class="converter-result-label">Result:</span>
+        <div id="unit-result-output" class="converter-result-value">0.00</div>
+      </div>
+    </div>
+
+    <!-- tweet composer -->
+    <div class="tweet-composer-container">
+      <h1 class="tweet-title">Tweet Composer</h1>
+
+      <textarea
+        id="tweet-input"
+        class="tweet-textarea"
+        placeholder="What's happening?!"
+      ></textarea>
+
+      <div class="tweet-footer">
+        <span id="tweet-counter" class="tweet-counter">20 left</span>
+        <button
+          type="button"
+          id="tweet-post-btn"
+          class="tweet-post-btn"
+          disabled
+        >
+          Post
+        </button>
+      </div>
+
+      <div id="tweet-feed" class="tweet-feed"></div>
+    </div>
+
+    <!-- PWD Checker -->
+    <div class="password-checklist-container">
+      <h1 class="password-title">Create Password</h1>
+
+      <div class="password-input-wrapper">
+        <input
+          type="password"
+          id="pwd-input"
+          class="password-text-input"
+          placeholder="Enter password"
+        />
+        <button type="button" class="password-toggle-btn">👁️</button>
+      </div>
+      <ul class="password-checklist">
+        <li id="password-length" class="password-rule">
+          <span>○</span> At least 8 characters
+        </li>
+        <li id="password-number" class="password-rule">
+          <span>○</span> Contains a number
+        </li>
+        <li id="password-uppercase" class="password-rule">
+          <span>○</span> Contains an uppercase letter
+        </li>
+        <li id="password-symbol" class="password-rule">
+          <span>○</span> Contains a symbol (!@#$ etc.)
+        </li>
+      </ul>
+      <div class="password-strong-msg">Strong password ✨</div>
+    </div>
+
+    <!-- Grade Report -->
+    <div class="grade-container">
+      <h2 class="grade-title">Class Report Card</h2>
+      <table class="grade-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Score</th>
+            <th>Grade</th>
+          </tr>
+        </thead>
+        <tbody class="grade-tbody"></tbody>
+      </table>
+      <div class="grade-summary"></div>
+    </div>
+
+    <!--cart -->
+    <div class="cart-container">
+      <h2 class="cart-title">Shopping Cart</h2>
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Total</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody class="cart-tbody"></tbody>
+      </table>
+      <div class="cart-empty" style="display: none">Your cart is empty</div>
+      <div class="cart-summary"></div>
+    </div>
+
+    <!-- Promodoro -->
+    <div class="promo-container">
+      <h2 class="promo-title">Pomodoro Timer v2</h2>
+
+      <div class="promo-settings">
+        <div class="promo-field">
+          <label class="promo-label">Focus (min)</label>
+          <input type="number" class="promo-input-work" value="25" min="1" />
+        </div>
+        <div class="promo-field">
+          <label class="promo-label">Short Break (min)</label>
+          <input type="number" class="promo-input-short" value="5" min="1" />
+        </div>
+        <div class="promo-field">
+          <label class="promo-label">Long Break (min)</label>
+          <input type="number" class="promo-input-long" value="15" min="1" />
+        </div>
+      </div>
+
+      <div class="promo-display">
+        <div class="promo-mode">Focus</div>
+        <div class="promo-timer">25:00</div>
+        <div class="promo-counter">Sessions completed: 0</div>
+      </div>
+
+      <div class="promo-actions">
+        <button class="promo-btn-start">Start</button>
+        <button class="promo-btn-pause">Pause</button>
+        <button class="promo-btn-reset">Reset</button>
+      </div>
+    </div>
+
+    <!-- Counter -->
+    <div class="count-container">
+      <h2 class="count-title">Countdown to Any Date</h2>
+
+      <div class="count-form">
+        <input
+          type="text"
+          class="count-input-name"
+          placeholder="Event Name (e.g., Eid)"
+        />
+        <input type="date" class="count-input-date" />
+        <button class="count-btn-start">Start</button>
+      </div>
+
+      <div class="count-display" style="display: none">
+        <div class="count-event-label">
+          Time until <span class="count-name-target"></span>
+        </div>
+        <div class="count-timer-box">
+          <span class="count-days">00</span>d
+          <span class="count-hours">00</span>h
+          <span class="count-mins">00</span>m
+          <span class="count-secs">00</span>s
+        </div>
+        <div class="count-message"></div>
+      </div>
+    </div>
+
+    <!-- Typing Speed -->
+    <div class="typing-container">
+      <h2 class="typing-title">Typing Speed Test</h2>
+      <p class="typing-sentence"></p>
+      <textarea
+        class="typing-input"
+        placeholder="Start typing here..."
+        rows="3"
+      ></textarea>
+      <div class="typing-results" style="display: none">
+        <p>Time: <span class="typing-time">0</span>s</p>
+        <p>WPM: <span class="typing-wpm">0</span></p>
+        <p>Accuracy: <span class="typing-accuracy">0</span>%</p>
+        <button class="typing-btn-reset">Try again</button>
+      </div>
+    </div>
+
+    <!-- Reaction Test -->
+    <div class="react-container">
+      <h2 class="react-title">Reaction Test (5 Rounds)</h2>
+      <div class="react-box">Click to start</div>
+      <div class="react-results"></div>
+    </div>
+
+    <!-- Lap StopWatch -->
+    <div class="lap-container">
+      <h2 class="lap-title">Lap Stopwatch</h2>
+      <div class="lap-timer-display">00:00.00</div>
+      <div class="lap-actions">
+        <button class="lap-btn-start">Start</button>
+        <button class="lap-btn-stop">Stop</button>
+        <button class="lap-btn-lap">Lap</button>
+        <button class="lap-btn-reset">Reset</button>
+      </div>
+      <ul class="lap-list"></ul>
+    </div>
+
+    <!-- Signup Form -->
+    <div class="signup-container">
+      <h2 class="signup-title">Full Signup Form</h2>
+      <form class="signup-form">
+        <div class="signup-field">
+          <label>Full Name</label>
+          <input
+            type="text"
+            class="signup-input-name"
+            placeholder="Enter name"
+          />
+          <small class="signup-error-name" style="display: none"
+            >Name must be at least 2 characters</small
+          >
+        </div>
+
+        <div class="signup-field">
+          <label>Email</label>
+          <input
+            type="email"
+            class="signup-input-email"
+            placeholder="Enter email"
+          />
+          <small class="signup-error-email" style="display: none"
+            >Must look like a valid email</small
+          >
+        </div>
+
+        <div class="signup-field">
+          <label>Password</label>
+          <input
+            type="password"
+            class="signup-input-password"
+            placeholder="Enter password"
+          />
+          <small class="signup-error-password" style="display: none"
+            >Min 6 chars, uppercase, number, symbol</small
+          >
+        </div>
+
+        <div class="signup-field">
+          <label>Confirm Password</label>
+          <input
+            type="password"
+            class="signup-input-confirm"
+            placeholder="Confirm password"
+          />
+          <small class="signup-error-confirm" style="display: none"
+            >Passwords don't match</small
+          >
+        </div>
+        <div class="signup-checkbox-group">
+          <input type="checkbox" class="signup-input-terms" id="signup-terms" />
+          <label for="signup-terms">I agree to the terms</label>
+        </div>
+        <button type="submit" class="signup-btn-submit" disabled>
+          Register
+        </button>
+      </form>
+      <div class="signup-welcome" style="display: none"></div>
+    </div>
+
+    <!-- CouponCode -->
+    <div class="coupon-container">
+      <h2 class="coupon-title">Shopping Cart</h2>
+      <p> Coupon Code : "SAVE10" "FLAT50" "BIGSALE"</p>
+
+      <div class="coupon-cart-info">
+        <div class="coupon-row">
+          <span>Subtotal:</span>
+          <span>$<span class="coupon-subtotal-val">1200.00</span></span>
+        </div>
+
+        <div class="coupon-discount-row" style="display: none">
+          <span>Discount (<span class="coupon-applied-name"></span>):</span>
+          <span class="coupon-discount-val">-$0.00</span>
+        </div>
+
+        <div class="coupon-row coupon-total-row">
+          <strong>Total:</strong>
+          <strong>$<span class="coupon-total-val">1200.00</span></strong>
+        </div>
+      </div>
+
+      <div class="coupon-box">
+        <input
+          type="text"
+          class="coupon-input"
+          placeholder="Enter coupon code"
+        />
+        <button class="coupon-btn-apply">Apply</button>
+      </div>
+
+      <div class="coupon-message"></div>
+      <a href="#" class="coupon-btn-remove" style="display: none"
+        >Remove coupon</a
+      >
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
